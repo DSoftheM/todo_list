@@ -1,4 +1,5 @@
 ﻿using System.Net.Http.Json;
+using Microsoft.EntityFrameworkCore;
 using TodoList.DAL;
 using TodoList.Domain;
 using TodoList.DTOs.dtos;
@@ -17,6 +18,12 @@ public class AssignmentService(AppDbContext dbContext)
 
         await dbContext.Assignments.AddAsync(assignment);
         await dbContext.SaveChangesAsync();
+    }
+
+
+    public async Task<Assignment?> GetById(int id)
+    {
+        return await dbContext.Assignments.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
     }
 
     public async Task<Todo[]> GetFromJsonPlaceholder()

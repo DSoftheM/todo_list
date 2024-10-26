@@ -13,8 +13,11 @@
   <component name="ChangeListManager">
     <list default="true" id="418e3f6c-7737-4373-94cd-db936bbaca8a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TodoList/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TodoList/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoList.DAL/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList.DAL/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoList/TodoList.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList/TodoList.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoList.DAL/Configurations/AssignmentConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList.DAL/Configurations/AssignmentConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoList.DAL/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList.DAL/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoList.DTOs/dtos/Assignment/Assignment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList.DTOs/dtos/Assignment/Assignment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoList.Services/AssignmentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList.Services/AssignmentService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoList/Controllers/AssignmentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList/Controllers/AssignmentController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +167,7 @@
       <updated>1729873460934</updated>
       <workItem from="1729873462003" duration="2100000" />
       <workItem from="1729923519677" duration="6103000" />
-      <workItem from="1729940027930" duration="2366000" />
+      <workItem from="1729940027930" duration="3621000" />
     </task>
     <servers />
   </component>
