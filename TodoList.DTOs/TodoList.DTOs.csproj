@@ -7,9 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\TodoList.DAL\TodoList.DAL.csproj" />
       <ProjectReference Include="..\TodoList.Domain\TodoList.Domain.csproj" />
-      <ProjectReference Include="..\TodoList.DTOs\TodoList.DTOs.csproj" />
     </ItemGroup>
 
 </Project>

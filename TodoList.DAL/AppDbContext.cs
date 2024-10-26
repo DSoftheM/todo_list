@@ -4,7 +4,7 @@ using TodoList.Domain;
 
 namespace TodoList.DAL;
 
-public class AppDbContext : DbContext
+public class AppDbContext :  DbContext
 {
     public DbSet<Assignment> Assignments { get; set; }
 
@@ -21,3 +21,8 @@ public class AppDbContext : DbContext
         base.Database.Migrate();
     }
 }
+
+// public class MyDbContext : DbContext, IAppDbContext
+// {
+//     public IQueryable<Assignment> Assignments { get; set; }
+// }
