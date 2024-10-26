@@ -1,23 +1,18 @@
+using Microsoft.EntityFrameworkCore;
+using TodoList.DAL;
 using TodoList.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
-
+builder.Services.AddDbContext<AppDbContext>(optionsBuilder =>
+{
+    optionsBuilder.UseNpgsql(connectionString);
+    optionsBuilder.EnableSensitiveDataLogging();
+});
 builder.Services.AddScoped<AssignmentService>();
 
 var app = builder.Build();
-
-
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-app.UseHttpsRedirection();
 app.MapControllers();
-
 app.Run();

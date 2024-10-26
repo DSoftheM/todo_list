@@ -6,9 +6,14 @@ namespace TodoList.Controllers;
 
 [ApiController]
 [Route("api/assignment")]
-public class AssignmentController(AssignmentService assignmentService)
+public class AssignmentController(AssignmentService assignmentService) : Controller
 {
-    [Route("/create")]
+    [Route("create")]
     [HttpPost]
-    public string Create(AssignmentSiteDTO assignment) => assignmentService.Create(assignment);
+    public async Task Create(AssignmentSiteDTO assignment) => await assignmentService.Create(assignment);
+
+    [Route("json-placeholder")]
+    [HttpGet]
+    public async Task<Todo[]> GetMockAssignmentsFromJsonPlaceholder() =>
+        await assignmentService.GetFromJsonPlaceholder();
 }

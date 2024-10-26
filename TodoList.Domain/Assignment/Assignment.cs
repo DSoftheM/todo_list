@@ -1,41 +1,38 @@
 ﻿namespace TodoList.Domain;
 
-public class Assignment(
-    int id,
-    string title,
-    string description,
-    DateTime created,
-    DateTime? completed,
-    AssignmentPriority priority)
+public class Assignment
 {
-    public int Id { get; set; } = id;
-    public string Title { get; set; } = title;
-    public string Description { get; set; } = description;
-    public DateTime Created { get; set; } = created;
-    public DateTime? Completed { get; set; } = completed;
-    public AssignmentPriority Priority { get; set; } = priority;
+    public int Id { get; set; }
+
+    public required string Title { get; set; }
+    public required string Description { get; set; }
+    public required DateTime Created { get; set; }
+    public required AssignmentPriority Priority { get; set; }
+
+    public DateTime? Completed { get; set; }
 }
 
-public class AssignmentSiteDTO(
-    string title,
-    string description,
-    DateTime created,
-    DateTime? completed,
-    AssignmentPriority priority)
+public class AssignmentSiteDTO
 {
-    public string Title { get; set; } = title;
-    public string Description { get; set; } = description;
-    public DateTime Created { get; set; } = created;
-    public DateTime? Completed { get; set; } = completed;
-    public AssignmentPriority Priority { get; set; } = priority;
+    public string Title { get; set; }
+    public string Description { get; set; }
+    public DateTime Created { get; set; }
+    public DateTime? Completed { get; set; }
+    public AssignmentPriority Priority { get; set; }
 }
 
 public static class AssignmentConverterExtension
 {
     public static Assignment ToSiteDTO(this Assignment assignment)
     {
-        return new Assignment(
-            assignment.Id, assignment.Title, assignment.Description, assignment.Created,
-            assignment.Completed, assignment.Priority);
+        return new Assignment()
+        {
+            Id = assignment.Id,
+            Title = assignment.Title,
+            Description = assignment.Description,
+            Created = assignment.Created,
+            Completed = assignment.Completed,
+            Priority = assignment.Priority
+        };
     }
 }
