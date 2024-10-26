@@ -4,7 +4,7 @@ using TodoList.Domain;
 
 namespace TodoList.DAL;
 
-public class AppDbContext :  DbContext
+public class AppDbContext : DbContext
 {
     public DbSet<Assignment> Assignments { get; set; }
 
