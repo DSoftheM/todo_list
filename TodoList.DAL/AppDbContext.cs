@@ -18,7 +18,9 @@ public class AppDbContext : DbContext
         modelBuilder.ApplyConfiguration(new AssignmentConfiguration());
 
         base.OnModelCreating(modelBuilder);
-        base.Database.Migrate();
+
+        if (Database.IsRelational())
+            base.Database.Migrate();
     }
 }
 

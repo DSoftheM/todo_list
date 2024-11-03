@@ -6,38 +6,61 @@ using TodoList.DTOs.dtos;
 
 namespace TodoList.Services;
 
-public class AssignmentService(AppDbContext dbContext)
+public interface IAssignmentService 
+{
+     public Task Create(AssignmentSiteDTO siteDto);
+     public Task<Assignment?> GetById(int id);
+     public Task<List<Assignment>> GetAll();
+     public Task Delete(int id);
+     public Task<Assignment> Update(AssignmentSiteDTO assignmentSiteDto);
+}
+
+public class AssignmentService(AppDbContext dbContext): IAssignmentService
 {
     public async Task Create(AssignmentSiteDTO siteDto)
     {
         var assignment = new Assignment()
         {
             Title = siteDto.Title, Description = siteDto.Description, Priority = siteDto.Priority,
-            Created = DateTime.Now
+            Completed = null, Created = DateTime.Now
         };
 
         await dbContext.Assignments.AddAsync(assignment);
         await dbContext.SaveChangesAsync();
     }
 
+    public async Task<Assignment?> GetById(int id) =>
+        await dbContext.Assignments.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
 
-    public async Task<Assignment?> GetById(int id)
+    public async Task<List<Assignment>> GetAll() => await dbContext.Assignments.AsNoTracking().ToListAsync();
+
+    public async Task Delete(int id)
     {
-        return await dbContext.Assignments.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+        var assignment = await GetById(id);
+        if (assignment == null) return;
+        dbContext.Assignments.Remove(assignment);
+        await dbContext.SaveChangesAsync();
     }
 
-    public async Task<Todo[]> GetFromJsonPlaceholder()
+    public async Task<Assignment> Update(AssignmentSiteDTO assignmentSiteDto)
     {
-        var httpClient = new HttpClient();
-        var json = await httpClient.GetFromJsonAsync<Todo[]>("https://jsonplaceholder.typicode.com/todos");
-        return json ?? [];
-    }
-}
+        var assignment = await GetById(assignmentSiteDto.Id);
+        if (assignment == null) throw new Exception("Assignment not found");
 
-public class Todo
-{
-    public int Id { get; set; }
-    public int UserId { get; set; }
-    public bool Completed { get; set; }
-    public string Title { get; set; }
+        var updatedAssignment = new Assignment()
+        {
+            Created = assignment.Created,
+
+            Completed = assignmentSiteDto.Completed,
+            Description = assignmentSiteDto.Description,
+            Priority = assignmentSiteDto.Priority,
+            Title = assignmentSiteDto.Title,
+            Id = assignmentSiteDto.Id
+        };
+
+        dbContext.Assignments.Update(updatedAssignment);
+
+        await dbContext.SaveChangesAsync();
+        return assignment;
+    }
 }

@@ -8,8 +8,7 @@ public class Assignment
     public required string Description { get; set; }
     public required DateTime Created { get; set; }
     public required AssignmentPriority Priority { get; set; }
-
-    public DateTime? Completed { get; set; }
+    public required DateTime? Completed { get; set; }
 }
 
 

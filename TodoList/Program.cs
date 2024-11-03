@@ -11,8 +11,8 @@ builder.Services.AddDbContext<AppDbContext>(optionsBuilder =>
     optionsBuilder.UseNpgsql(connectionString);
     optionsBuilder.EnableSensitiveDataLogging();
 });
-builder.Services.AddScoped<AssignmentService>();
-
+builder.Services.AddScoped<IAssignmentService, AssignmentService>();
+ 
 var app = builder.Build();
 app.MapControllers();
 app.Run();

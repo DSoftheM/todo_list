@@ -12,12 +12,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="418e3f6c-7737-4373-94cd-db936bbaca8a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/TodoList.Tests/ContextGenerator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoList.Tests/MockHelper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TodoList/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TodoList/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoList.DAL/Configurations/AssignmentConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList.DAL/Configurations/AssignmentConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoList.DAL/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList.DAL/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoList.DAL/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList.DAL/AppDbContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TodoList.DTOs/dtos/Assignment/Assignment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList.DTOs/dtos/Assignment/Assignment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoList.Domain/Assignment/Assignment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList.Domain/Assignment/Assignment.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TodoList.Services/AssignmentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList.Services/AssignmentService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoList.sln" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoList.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TodoList/Controllers/AssignmentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList/Controllers/AssignmentController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoList/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +36,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2565b9d99fdde488bc7801b84387b2cc864959cfb63212e1ff576fc9c6bb7e/CancellationToken.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3bd4df5aff92cabbc4d630be64227073db1b8539b3a1e47786b4b189d7cdb7/DbContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/74e4c72cd3922ed61496931f33baf4a9b5950edddb6b78bc296241285f25c3/TaskAwaiter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bd1d5c50194fea68ff3559c160230b0ab50f5acf4ce3061bffd6d62958e2182/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f4a51af234b9d918976920e05776219c43a0c22e90cc28c5873139d6fdc1485f/Socket.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -49,24 +57,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.TodoList: http.executor&quot;: &quot;Debug&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;HTTP Request.All in TodoList.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.TodoList: http.executor": "Debug",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "HTTP Request.All in TodoList.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.codeium.enabled": "true",
+    "d2b8277f-6ba6-4e07-97dd-7a2a6b3bcd50.executor": "Debug",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "file.status.colors",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.TodoList: http">
+}]]></component>
+  <component name="RunManager" selected="d2b8277f-6ba6-4e07-97dd-7a2a6b3bcd50">
     <configuration name="TodoList.DAL" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -167,7 +177,8 @@
       <updated>1729873460934</updated>
       <workItem from="1729873462003" duration="2100000" />
       <workItem from="1729923519677" duration="6103000" />
-      <workItem from="1729940027930" duration="3621000" />
+      <workItem from="1729940027930" duration="4309000" />
+      <workItem from="1730627699298" duration="8887000" />
     </task>
     <servers />
   </component>
@@ -181,6 +192,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.OperationCanceledException" isInternal="false" displayValue="OperationCanceledException" namespaceName="System">
+            <option name="internal" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint enabled="true" type="DotNet Exception Breakpoints" />
       </default-breakpoints>
