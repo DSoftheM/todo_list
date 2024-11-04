@@ -6,23 +6,23 @@ using TodoList.DTOs.dtos;
 
 namespace TodoList.Services;
 
-public interface IAssignmentService 
+public interface IAssignmentService
 {
-     public Task Create(AssignmentSiteDTO siteDto);
-     public Task<Assignment?> GetById(int id);
-     public Task<List<Assignment>> GetAll();
-     public Task Delete(int id);
-     public Task<Assignment> Update(AssignmentSiteDTO assignmentSiteDto);
+    public Task Create(AssignmentSiteDTO siteDto);
+    public Task<Assignment?> GetById(int id);
+    public Task<List<Assignment>> GetAll();
+    public Task Delete(int id);
+    public Task<Assignment> Update(AssignmentSiteDTO assignmentSiteDto);
 }
 
-public class AssignmentService(AppDbContext dbContext): IAssignmentService
+public class AssignmentService(AppDbContext dbContext) : IAssignmentService
 {
     public async Task Create(AssignmentSiteDTO siteDto)
     {
         var assignment = new Assignment()
         {
             Title = siteDto.Title, Description = siteDto.Description, Priority = siteDto.Priority,
-            Completed = null, Created = DateTime.Now
+            Completed = null, Created = DateTime.Now,
         };
 
         await dbContext.Assignments.AddAsync(assignment);
